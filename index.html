@@ -123,6 +123,11 @@
   .serie .d .f { background: var(--green); }
   .serie .d.parcial { opacity: .35; }
   .serie-lbl { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-top: 6px; font-family: var(--mono); }
+  .matriz td.n { font-family: var(--mono); text-align: right; min-width: 64px; }
+  .matriz td.vacia { color: #2f4058; }
+  .matriz th.n { text-align: right; }
+  .matriz tr.tot td { font-weight: 600; border-top: 2px solid var(--line); background: #0e1c2e; }
+  .matriz td.seg { color: var(--muted); font-size: 12.5px; }
   td.pos { color: var(--orange); }
   td.neg { color: var(--green); }
 
@@ -210,6 +215,31 @@
     return new Intl.DateTimeFormat('es-CO', { timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'short' })
       .format(new Date(Date.UTC(y, mo - 1, d)));
   };
+  const fmtMes = ym => {
+    if (ym === 'sin_fecha') return 'Sin fecha';
+    const [y, mo] = ym.split('-').map(Number);
+    return new Intl.DateTimeFormat('es-CO', { timeZone: 'UTC', month: 'short', year: 'numeric' })
+      .format(new Date(Date.UTC(y, mo - 1, 1)));
+  };
+  // Matriz mes de creación x tipo de servicio (celdas sombreadas según cantidad)
+  function matrizMesTipo(mt) {
+    if (!mt?.filas?.length) return '<p class="ayuda">Sin servicios abiertos.</p>';
+    const max = Math.max(1, ...mt.filas.flatMap(f => Object.values(f.por_mes)));
+    const mesActual = new Date(Date.now() - 5 * 3600000).toISOString().slice(0, 7);
+    const celda = n => n
+      ? `<td class="n" style="background:rgba(241,91,43,${(0.10 + 0.6 * n / max).toFixed(2)})">${fmtNum(n)}</td>`
+      : '<td class="n vacia">·</td>';
+    const cab = mt.meses.map(m => `<th class="n"${m < mesActual ? ' title="Mes anterior al actual"' : ''}>${esc(fmtMes(m))}</th>`).join('');
+    const filas = mt.filas.map(f => `
+      <tr><td>${esc(f.tipo)}</td><td class="seg">${esc(f.segmento)}</td>
+        ${mt.meses.map(m => celda(f.por_mes[m] || 0)).join('')}
+        <td class="n"><b>${fmtNum(f.total)}</b></td></tr>`).join('');
+    const total = Object.values(mt.totales_mes).reduce((t, n) => t + n, 0);
+    const pie = `<tr class="tot"><td>Total</td><td></td>${mt.meses.map(m => `<td class="n">${fmtNum(mt.totales_mes[m] || 0)}</td>`).join('')}<td class="n">${fmtNum(total)}</td></tr>`;
+    return `<div class="tabla"><table class="matriz">
+      <thead><tr><th>Tipo de servicio</th><th>Segmento</th>${cab}<th class="n">Total</th></tr></thead>
+      <tbody>${filas}${pie}</tbody></table></div>`;
+  }
   const conSigno = n => (n > 0 ? '+' : '') + fmtNum(n);
   const normTipo = t => String(t || '').toLowerCase().replace(/[\s_-]/g, '');
 
@@ -405,6 +435,11 @@
         <section class="sec dos">
           <div><h3>Por segmento</h3><div class="chips">${segs || '<p class="ayuda">Sin datos.</p>'}</div></div>
           <div><h3>Por cuenta</h3>${barras(m.porCuenta)}</div>
+        </section>
+        <section class="sec">
+          <h3>Abiertos por mes de creación y tipo de servicio</h3>
+          <p class="ayuda">Mismo universo del total (sin programados a más de ${m.ventana_prog_h || 48} h). Lo que sigue abierto en meses anteriores es candidato a revisión en Helios.</p>
+          ${matrizMesTipo(m.matriz_mes_tipo)}
         </section>
         <section class="sec">
           <h3>Los ${fmtNum((m.mas_antiguos || []).length)} más antiguos</h3>
