@@ -1,5 +1,5 @@
 {
-  "generadoEn": "2026-10-30T20:48:22.130Z",
+  "generadoEn": "2026-10-30T21:10:37.793Z",
   "filas_leidas": 25996,
   "validez": {
     "validos": 20859,
@@ -17,24 +17,482 @@
         "rojo": null
       },
       "semaforo": "sin_umbral",
-      "valor": 612,
+      "valor": 613,
+      "matriz_mes_tipo": {
+        "meses": [
+          "2026-08",
+          "2026-09",
+          "2026-10"
+        ],
+        "filas": [
+          {
+            "tipo": "towBreakdown",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 52
+            },
+            "total": 52
+          },
+          {
+            "tipo": "reposicion_farola",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-08": 6,
+              "2026-10": 21,
+              "2026-09": 17
+            },
+            "total": 44
+          },
+          {
+            "tipo": "basic_vehicle_washing_on_site",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 43,
+              "2026-08": 1
+            },
+            "total": 44
+          },
+          {
+            "tipo": "desplazamiento",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 39,
+              "2026-09": 1
+            },
+            "total": 40
+          },
+          {
+            "tipo": "towHeavyWeight",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 38,
+              "2026-09": 1
+            },
+            "total": 39
+          },
+          {
+            "tipo": "pet_grooming",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 38
+            },
+            "total": 38
+          },
+          {
+            "tipo": "reposicion_stop",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 21,
+              "2026-09": 9,
+              "2026-08": 4
+            },
+            "total": 34
+          },
+          {
+            "tipo": "custodia_del_vehiculo_asegurado",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 32,
+              "2026-09": 1
+            },
+            "total": 33
+          },
+          {
+            "tipo": "onsite_legal_assistance",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-08": 4,
+              "2026-10": 22,
+              "2026-09": 2
+            },
+            "total": 28
+          },
+          {
+            "tipo": "towCollision",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 23
+            },
+            "total": 23
+          },
+          {
+            "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-08": 2,
+              "2026-10": 16,
+              "2026-09": 4
+            },
+            "total": 22
+          },
+          {
+            "tipo": "desparacitacion_mascota",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 22
+            },
+            "total": 22
+          },
+          {
+            "tipo": "veterinary_consultation",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 20
+            },
+            "total": 20
+          },
+          {
+            "tipo": "hexavalent_vaccination",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 16
+            },
+            "total": 16
+          },
+          {
+            "tipo": "glass_replacement",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-09": 4,
+              "2026-10": 9,
+              "2026-08": 2
+            },
+            "total": 15
+          },
+          {
+            "tipo": "jumpStart",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 14
+            },
+            "total": 14
+          },
+          {
+            "tipo": "sickness_expenses",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 14
+            },
+            "total": 14
+          },
+          {
+            "tipo": "orientacion_legal_telefonica",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 11
+            },
+            "total": 11
+          },
+          {
+            "tipo": "towExtraction",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 9
+            },
+            "total": 9
+          },
+          {
+            "tipo": "flea_pipette",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 9
+            },
+            "total": 9
+          },
+          {
+            "tipo": "chip_installation",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 7
+            },
+            "total": 7
+          },
+          {
+            "tipo": "rabies_vaccination",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 6
+            },
+            "total": 6
+          },
+          {
+            "tipo": "conductor_designado",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 6
+            },
+            "total": 6
+          },
+          {
+            "tipo": "tow_heavy_weight_collision",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 6
+            },
+            "total": 6
+          },
+          {
+            "tipo": "replacement_of_a_burst_tire",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-09": 1,
+              "2026-08": 1,
+              "2026-10": 3
+            },
+            "total": 5
+          },
+          {
+            "tipo": "orientacion_diagnostico_mantenimiento_servicio_operacional",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-08": 1,
+              "2026-10": 2,
+              "2026-09": 1
+            },
+            "total": 4
+          },
+          {
+            "tipo": "instalacion",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-09": 2,
+              "2026-10": 1,
+              "2026-08": 1
+            },
+            "total": 4
+          },
+          {
+            "tipo": "canine_walker",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 4
+            },
+            "total": 4
+          },
+          {
+            "tipo": "conductor_elegido",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 4
+            },
+            "total": 4
+          },
+          {
+            "tipo": "towTire",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 4
+            },
+            "total": 4
+          },
+          {
+            "tipo": "panoramic_glass_breaking",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 3
+            },
+            "total": 3
+          },
+          {
+            "tipo": "emergency_veterinary_consultation_in_clinic",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 3
+            },
+            "total": 3
+          },
+          {
+            "tipo": "garantia_de_llanta",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 3
+            },
+            "total": 3
+          },
+          {
+            "tipo": "professional_driver",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 3
+            },
+            "total": 3
+          },
+          {
+            "tipo": "kit_de_cumpleanos",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 2
+            },
+            "total": 2
+          },
+          {
+            "tipo": "sterilization_of_pets",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 2
+            },
+            "total": 2
+          },
+          {
+            "tipo": "flatTire",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 2
+            },
+            "total": 2
+          },
+          {
+            "tipo": "pet_bathing",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 2
+            },
+            "total": 2
+          },
+          {
+            "tipo": "asesoria_juridica_accidente_transito",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-09": 2
+            },
+            "total": 2
+          },
+          {
+            "tipo": "transfer_due_to_vehicle_immobilization",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-08": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "lavado_chasis_camioneta",
+            "segmento": "Sin segmento",
+            "por_mes": {
+              "2026-10": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "orientacion_veterinaria_telefonica",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "asesoria_legal_gestoria_vehicular",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-10": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "replacement_due_to_theft_of_side_windows",
+            "segmento": "Sin segmento",
+            "por_mes": {
+              "2026-09": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "pet_trainer",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "basic_vehicle_washing_and_disinfection_home",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "emotional_support",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "examenes_prequirurgicos_para_esterilizacion",
+            "segmento": "Sin segmento",
+            "por_mes": {
+              "2026-10": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "directional_replacement",
+            "segmento": "Sin segmento",
+            "por_mes": {
+              "2026-10": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "on_site_legal_assistance",
+            "segmento": "Sin segmento",
+            "por_mes": {
+              "2026-10": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "kindergarten",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "telephone_nutritional_veterinary_orientation",
+            "segmento": "Concierge",
+            "por_mes": {
+              "2026-10": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "taxi",
+            "segmento": "Sin segmento",
+            "por_mes": {
+              "2026-08": 1
+            },
+            "total": 1
+          }
+        ],
+        "totales_mes": {
+          "2026-08": 24,
+          "2026-09": 46,
+          "2026-10": 543
+        }
+      },
       "ventana_prog_h": 48,
       "grupos": {
         "inmediatos": 243,
-        "prog_vencidos": 273,
+        "prog_vencidos": 274,
         "prog_proximos": 96,
-        "prog_futuros": 75
+        "prog_futuros": 74
       },
       "antiguedad": {
-        "<1h": 4,
-        "1-4h": 29,
-        "4-24h": 171,
-        ">24h": 312
+        "<1h": 5,
+        "1-4h": 16,
+        "4-24h": 177,
+        ">24h": 319
       },
       "porSegmento": [
         {
           "nombre": "Road",
-          "n": 425
+          "n": 426
         },
         {
           "nombre": "Concierge",
@@ -48,7 +506,7 @@
       "porCuenta": [
         {
           "nombre": "Quan",
-          "n": 151
+          "n": 152
         },
         {
           "nombre": "Zurich",
@@ -122,7 +580,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 2063.9
+          "edad_h": 2064.3
         },
         {
           "PONumber": "5438393",
@@ -130,7 +588,7 @@
           "tipo": "basic_vehicle_washing_on_site",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 2023.6
+          "edad_h": 2024
         },
         {
           "PONumber": "5442847",
@@ -138,7 +596,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1984.4
+          "edad_h": 1984.8
         },
         {
           "PONumber": "5463137",
@@ -146,7 +604,7 @@
           "tipo": "transfer_due_to_vehicle_immobilization",
           "segmento": "Concierge",
           "grupo": "inmediatos",
-          "edad_h": 1794.7
+          "edad_h": 1795
         },
         {
           "PONumber": "5466391",
@@ -154,7 +612,7 @@
           "tipo": "orientacion_diagnostico_mantenimiento_servicio_operacional",
           "segmento": "Concierge",
           "grupo": "inmediatos",
-          "edad_h": 1761
+          "edad_h": 1761.4
         },
         {
           "PONumber": "5454573",
@@ -162,7 +620,7 @@
           "tipo": "instalacion",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 1686.8
+          "edad_h": 1687.2
         },
         {
           "PONumber": "5480944",
@@ -170,7 +628,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1648.6
+          "edad_h": 1649
         },
         {
           "PONumber": "5481942",
@@ -178,7 +636,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Concierge",
           "grupo": "inmediatos",
-          "edad_h": 1631.1
+          "edad_h": 1631.4
         },
         {
           "PONumber": "5485299",
@@ -186,7 +644,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Concierge",
           "grupo": "inmediatos",
-          "edad_h": 1605.9
+          "edad_h": 1606.3
         },
         {
           "PONumber": "5486998",
@@ -194,7 +652,7 @@
           "tipo": "taxi",
           "segmento": "Sin segmento",
           "grupo": "prog_vencidos",
-          "edad_h": 1572
+          "edad_h": 1572.3
         },
         {
           "PONumber": "5494082",
@@ -202,7 +660,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1534.8
+          "edad_h": 1535.2
         },
         {
           "PONumber": "5512758",
@@ -210,7 +668,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1373.2
+          "edad_h": 1373.6
         },
         {
           "PONumber": "5466585",
@@ -218,7 +676,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 1335.8
+          "edad_h": 1336.2
         },
         {
           "PONumber": "5432856",
@@ -226,7 +684,7 @@
           "tipo": "reposicion_stop",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 1335.8
+          "edad_h": 1336.2
         },
         {
           "PONumber": "5453296",
@@ -234,7 +692,7 @@
           "tipo": "glass_replacement",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 1280.8
+          "edad_h": 1281.2
         },
         {
           "PONumber": "5535451",
@@ -242,7 +700,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1183.2
+          "edad_h": 1183.5
         },
         {
           "PONumber": "5535578",
@@ -250,7 +708,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Concierge",
           "grupo": "inmediatos",
-          "edad_h": 1182.6
+          "edad_h": 1182.9
         },
         {
           "PONumber": "5503451",
@@ -258,7 +716,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 1119.8
+          "edad_h": 1120.2
         },
         {
           "PONumber": "5547446",
@@ -266,7 +724,7 @@
           "tipo": "towHeavyWeight",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1081
+          "edad_h": 1081.3
         },
         {
           "PONumber": "5546350",
@@ -274,7 +732,7 @@
           "tipo": "instalacion",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 1062.8
+          "edad_h": 1063.2
         },
         {
           "PONumber": "5551785",
@@ -282,7 +740,7 @@
           "tipo": "asesoria_juridica_accidente_transito",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1042.3
+          "edad_h": 1042.6
         },
         {
           "PONumber": "5553386",
@@ -290,7 +748,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1032.6
+          "edad_h": 1032.9
         },
         {
           "PONumber": "5513889",
@@ -298,7 +756,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 1011.8
+          "edad_h": 1012.2
         },
         {
           "PONumber": "5440847",
@@ -306,7 +764,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 999.8
+          "edad_h": 1000.2
         },
         {
           "PONumber": "5519117",
@@ -314,7 +772,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 999.8
+          "edad_h": 1000.2
         },
         {
           "PONumber": "5510681",
@@ -322,7 +780,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 999.8
+          "edad_h": 1000.2
         },
         {
           "PONumber": "5509380",
@@ -330,7 +788,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 999.8
+          "edad_h": 1000.2
         },
         {
           "PONumber": "5503890",
@@ -338,7 +796,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 999.8
+          "edad_h": 1000.2
         },
         {
           "PONumber": "5564182",
@@ -346,7 +804,7 @@
           "tipo": "asesoria_juridica_accidente_transito",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 936.7
+          "edad_h": 937.1
         },
         {
           "PONumber": "5564343",
@@ -354,7 +812,7 @@
           "tipo": "orientacion_diagnostico_mantenimiento_servicio_operacional",
           "segmento": "Concierge",
           "grupo": "inmediatos",
-          "edad_h": 936
+          "edad_h": 936.3
         }
       ],
       "notas": []
