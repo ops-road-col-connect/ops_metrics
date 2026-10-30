@@ -112,6 +112,20 @@
   td.edad { font-family: var(--mono); text-align: right; }
   td.edad.alto { color: var(--orange); font-weight: 600; }
 
+  .kpis { display: flex; flex-wrap: wrap; gap: 14px 36px; }
+  .kpi .k { color: var(--muted); font-size: 13px; }
+  .kpi .v { font-family: var(--mono); font-weight: 600; font-size: 26px; }
+  .kpi .p { color: var(--muted); font-size: 12.5px; }
+  .serie { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 3px; align-items: end; height: 170px; border-bottom: 1px solid var(--line); }
+  .serie .d { display: flex; gap: 1px; align-items: flex-end; height: 100%; }
+  .serie .d span { flex: 1; border-radius: 2px 2px 0 0; min-height: 1px; }
+  .serie .d .c { background: var(--teal); }
+  .serie .d .f { background: var(--green); }
+  .serie .d.parcial { opacity: .35; }
+  .serie-lbl { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-top: 6px; font-family: var(--mono); }
+  td.pos { color: var(--orange); }
+  td.neg { color: var(--green); }
+
   footer.wrap { color: var(--muted); font-size: 12.5px; border-top: 1px solid var(--line); padding-top: 18px; padding-bottom: 28px; }
 
   @media (max-width: 860px) {
@@ -191,6 +205,12 @@
   const fmtFecha = d => new Intl.DateTimeFormat('es-CO', {
     timeZone: 'America/Bogota', weekday: 'short', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit',
   }).format(d);
+  const fmtDia = iso => {
+    const [y, mo, d] = iso.split('-').map(Number);
+    return new Intl.DateTimeFormat('es-CO', { timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'short' })
+      .format(new Date(Date.UTC(y, mo - 1, d)));
+  };
+  const conSigno = n => (n > 0 ? '+' : '') + fmtNum(n);
   const normTipo = t => String(t || '').toLowerCase().replace(/[\s_-]/g, '');
 
   // Última publicación programada (en ms UTC) según HORAS_PUBLICACION en hora Colombia (UTC-5)
@@ -308,7 +328,8 @@
         <div class="resumen" style="border-left-color:${s.c}">
           <h2>${esc(m.nombre || m.metric)}</h2>
           <div class="equipo">${esc(m.equipo || '')}</div>
-          <div class="valor">${fmtNum(m.valor)}</div>
+          <div class="valor">${m.formato === 'signo' && m.valor > 0 ? '+' : ''}${fmtNum(m.valor)}</div>
+          ${m.dia_referencia ? `<div class="equipo">Día ${esc(fmtDia(m.dia_referencia))}</div>` : ''}
           <div class="sem"><i style="background:${s.c}"></i>${s.t}</div>
           <div class="umbrales">${umbrales}</div>
           ${notas}
@@ -393,6 +414,50 @@
             <tbody>${filas}</tbody></table></div>` : '<p class="ayuda">No hay servicios abiertos con antigüedad calculable.</p>'}
         </section>`;
     },
+  };
+
+  RENDER.vol_flujo_dia = m => {
+    const a = m.ayer || {}, p = m.promedio || {};
+    const serie = m.serie || [];
+    const mayor = Math.max(1, ...serie.map(f => Math.max(f.creados, f.cerrados)));
+    const cols = serie.map(f => `
+      <div class="d ${f.parcial ? 'parcial' : ''}" title="${esc(fmtDia(f.dia))}: ${f.creados} creados, ${f.cerrados} cerrados${f.parcial ? ' (día en curso)' : ''}">
+        <span class="c" style="height:${(f.creados / mayor) * 100}%"></span>
+        <span class="f" style="height:${(f.cerrados / mayor) * 100}%"></span>
+      </div>`).join('');
+    const ultimos = serie.filter(f => !f.parcial).slice(-7).reverse();
+    const filas = ultimos.map(f => `
+      <tr>
+        <td>${esc(fmtDia(f.dia))}</td>
+        <td class="edad">${fmtNum(f.creados)}</td>
+        <td class="edad">${fmtNum(f.creados_finalizados)}</td>
+        <td class="edad">${fmtNum(f.creados_activos)}</td>
+        <td class="edad">${fmtNum(f.creados_cancelados)}</td>
+        <td class="edad">${fmtNum(f.cerrados)}</td>
+        <td class="edad ${f.neto > 0 ? 'pos' : f.neto < 0 ? 'neg' : ''}">${conSigno(f.neto)}</td>
+      </tr>`).join('');
+    return `
+      <section class="sec">
+        <div class="kpis">
+          <div class="kpi"><div class="k">Creados</div><div class="v">${fmtNum(a.creados)}</div><div class="p">Promedio ${fmtNum(p.creados)}</div></div>
+          <div class="kpi"><div class="k">Cerrados</div><div class="v">${fmtNum(a.cerrados)}</div><div class="p">Promedio ${fmtNum(p.cerrados)}</div></div>
+          <div class="kpi"><div class="k">Neto</div><div class="v">${conSigno(a.neto)}</div><div class="p">Promedio ${conSigno(p.neto)}</div></div>
+        </div>
+        <p class="ayuda" style="margin-top:10px">Promedios de los últimos ${fmtNum(p.dias)} días completos. Un neto positivo deja más servicios abiertos de los que había.</p>
+      </section>
+      <section class="sec">
+        <h3>Creados y cerrados por día</h3>
+        <div class="leyenda" style="margin:0 0 12px"><span><i style="background:var(--teal)"></i>Creados</span><span><i style="background:var(--green)"></i>Cerrados</span><span>El día en curso aparece atenuado</span></div>
+        <div class="serie" role="img" aria-label="Servicios creados y cerrados por día">${cols}</div>
+        <div class="serie-lbl"><span>${serie.length ? esc(fmtDia(serie[0].dia)) : ''}</span><span>${serie.length ? esc(fmtDia(serie[serie.length - 1].dia)) : ''}</span></div>
+      </section>
+      <section class="sec">
+        <h3>Últimos 7 días</h3>
+        <p class="ayuda">Los creados se desglosan según su estatus actual; los cerrados son los finalizados de ese día.</p>
+        <div class="tabla"><table>
+          <thead><tr><th>Día</th><th style="text-align:right">Creados</th><th style="text-align:right">Finalizados</th><th style="text-align:right">Activos</th><th style="text-align:right">Cancelados GOA</th><th style="text-align:right">Cerrados</th><th style="text-align:right">Neto</th></tr></thead>
+          <tbody>${filas}</tbody></table></div>
+      </section>`;
   };
 
   // Para métricas sin vista propia: muestra cualquier desglose del tipo [{nombre, n}]
