@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Métricas de operación Road</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Prompt:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c12;
+    --navy: #001d3d;
+    --panel: #0b1726;
+    --line: #1b2a3f;
+    --text: #e8edf3;
+    --muted: #8797ab;
+    --orange: #f15b2b;
+    --teal: #279bb0;
+    --yellow: #ffb000;
+    --green: #9fd1a4;
+    --sans: 'Prompt', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); }
+  body { font: 400 15px/1.55 var(--sans); min-height: 100vh; }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+  /* Encabezado */
+  header { background: var(--navy); border-bottom: 3px solid var(--orange); }
+  .top { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding: 28px 0 0; flex-wrap: wrap; }
+  h1 { font-weight: 600; font-size: 30px; line-height: 1.1; margin: 0; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); margin: 6px 0 0; font-size: 14px; }
+  .estado { display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .estado b { color: var(--text); font-weight: 600; }
+  .btn { background: transparent; border: 1px solid #2f4a6b; border-radius: 6px; padding: 7px 14px; cursor: pointer; font-family: var(--sans); font-size: 14px; }
+  .btn:hover { border-color: var(--teal); }
+
+  nav[role=tablist] { display: flex; gap: 4px; margin-top: 22px; overflow-x: auto; }
+  [role=tab] { background: none; border: 0; padding: 12px 18px 14px; cursor: pointer; font-size: 16px; font-weight: 500; color: var(--muted); border-bottom: 3px solid transparent; margin-bottom: -3px; white-space: nowrap; }
+  [role=tab][aria-selected=true] { color: var(--text); border-bottom-color: var(--orange); }
+  [role=tab] .n { font-family: var(--mono); font-size: 12px; margin-left: 8px; padding: 1px 7px; border-radius: 10px; background: #12304f; color: var(--muted); }
+  [role=tab][aria-selected=true] .n { background: var(--orange); color: #fff; }
+
+  main.wrap { padding-top: 28px; padding-bottom: 56px; }
+
+  /* Avisos */
+  .aviso { border-left: 4px solid var(--yellow); background: #1a1608; padding: 12px 16px; margin-bottom: 20px; border-radius: 0 6px 6px 0; font-size: 14px; }
+  .aviso.error { border-color: var(--orange); background: #1c0e0a; }
+  details.adv { margin-bottom: 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+  details.adv summary { cursor: pointer; padding: 12px 16px; font-size: 14px; color: var(--yellow); }
+  details.adv ul { margin: 0; padding: 0 16px 14px 34px; color: var(--muted); font-size: 13.5px; }
+
+  .vacio { border: 1px dashed #2a3d57; border-radius: 10px; padding: 40px 28px; color: var(--muted); max-width: 640px; }
+  .vacio strong { display: block; color: var(--text); font-weight: 500; font-size: 17px; margin-bottom: 6px; }
+
+  /* Bloque de métrica */
+  .metrica { display: grid; grid-template-columns: 300px 1fr; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; margin-bottom: 24px; }
+  .resumen { padding: 24px 24px 26px; border-right: 1px solid var(--line); border-left: 6px solid var(--muted); background: linear-gradient(180deg, #0e1e33 0%, var(--panel) 100%); }
+  .resumen h2 { font-size: 18px; font-weight: 500; margin: 0 0 2px; }
+  .resumen .equipo { color: var(--muted); font-size: 13px; }
+  .valor { font-family: var(--mono); font-weight: 600; font-size: 68px; line-height: 1; margin: 22px 0 14px; letter-spacing: -0.03em; }
+  .sem { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; }
+  .sem i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .umbrales { color: var(--muted); font-size: 13px; margin-top: 8px; }
+  .notas { margin: 18px 0 0; padding: 0; list-style: none; font-size: 12.5px; color: var(--muted); }
+  .notas li { padding-left: 12px; border-left: 2px solid var(--yellow); margin-bottom: 6px; }
+
+  .detalle { padding: 24px 28px 28px; min-width: 0; }
+  .sec { margin-bottom: 28px; }
+  .sec:last-child { margin-bottom: 0; }
+  .sec h3 { font-size: 15px; font-weight: 500; margin: 0 0 4px; }
+  .sec p.ayuda { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+
+  .stack { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: #13233a; }
+  .stack span { display: block; height: 100%; }
+  .leyenda { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 10px; font-size: 13.5px; }
+  .leyenda span { display: inline-flex; align-items: center; gap: 8px; }
+  .leyenda i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  .leyenda b { font-family: var(--mono); font-weight: 600; }
+  .fuera { margin-top: 10px; font-size: 13px; color: var(--muted); }
+
+  .hist { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; align-items: end; height: 150px; }
+  .hist .col { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+  .hist .bar { background: var(--teal); border-radius: 4px 4px 0 0; min-height: 2px; }
+  .hist .col.alerta .bar { background: var(--orange); }
+  .hist .num { font-family: var(--mono); font-weight: 600; font-size: 18px; margin-bottom: 4px; }
+  .hist-lbl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; border-top: 1px solid var(--line); padding-top: 6px; font-size: 12.5px; color: var(--muted); }
+
+  .dos { display: grid; grid-template-columns: 1fr 1.6fr; gap: 28px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { border: 1px solid #2a3f5c; border-radius: 6px; padding: 6px 12px; font-size: 13.5px; }
+  .chip b { font-family: var(--mono); margin-left: 8px; }
+
+  .barras { display: grid; grid-template-columns: minmax(110px, max-content) 1fr 44px; gap: 6px 12px; align-items: center; font-size: 13.5px; }
+  .barras .nom { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; }
+  .barras .pista { height: 8px; background: #13233a; border-radius: 4px; overflow: hidden; }
+  .barras .pista span { display: block; height: 100%; background: var(--teal); }
+  .barras .cant { font-family: var(--mono); text-align: right; }
+  .mas { color: var(--muted); font-size: 12.5px; margin-top: 8px; }
+
+  .tabla { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { font-weight: 500; color: var(--muted); background: #0e1c2e; position: sticky; top: 0; }
+  tr:last-child td { border-bottom: 0; }
+  td.mono { font-family: var(--mono); }
+  td.edad { font-family: var(--mono); text-align: right; }
+  td.edad.alto { color: var(--orange); font-weight: 600; }
+
+  footer.wrap { color: var(--muted); font-size: 12.5px; border-top: 1px solid var(--line); padding-top: 18px; padding-bottom: 28px; }
+
+  @media (max-width: 860px) {
+    .metrica { grid-template-columns: 1fr; }
+    .resumen { border-right: 0; border-bottom: 1px solid var(--line); }
+    .dos { grid-template-columns: 1fr; }
+    .valor { font-size: 56px; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 16px; }
+    h1 { font-size: 24px; }
+    .detalle { padding: 20px 16px; }
+    .hist-lbl { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <h1>Operación Road Colombia</h1>
+        <p class="sub">Indicadores de la operación: objetivos del período, salud diaria y mejoras en curso</p>
+      </div>
+      <div class="estado">
+        <span id="actualizado">Cargando datos…</span>
+        <button class="btn" id="recargar" type="button">Recargar</button>
+      </div>
+    </div>
+    <nav role="tablist" aria-label="Tipo de indicador" id="tabs"></nav>
+  </div>
+</header>
+
+<main class="wrap" id="contenido" role="tabpanel" tabindex="-1"></main>
+
+<footer class="wrap">
+  Los datos se publican a las 7:00 y a las 13:00 (hora Colombia) desde servicios_road_col, según la configuración de ops_metrics_co.
+</footer>
+
+<script>
+  // Fuentes del JSON: primero el archivo junto a esta página (GitHub Pages);
+  // si falla (por ejemplo, al abrir el HTML localmente), la copia en raw.githubusercontent.
+  const FUENTES = [
+    'ops_metrics.json',
+    'https://raw.githubusercontent.com/ops-road-col-connect/ops_metrics/main/ops_metrics.json',
+  ];
+  const HORAS_PUBLICACION = [7, 13];   // hora Colombia
+  const RECARGA_MIN = 15;
+
+  const TABS = [
+    { id: 'top5', label: 'Top 5',
+      vacio: ['Sin objetivos Top 5 activos', 'Agrega los objetivos del período en la pestaña metrics de ops_metrics_co con tipo top5 y activo TRUE.'] },
+    { id: 'health', label: 'Health',
+      vacio: ['Sin métricas Health activas', 'Agrega métricas en la pestaña metrics de ops_metrics_co con tipo health y activo TRUE.'] },
+    { id: 'improvement', label: 'Improvement',
+      vacio: ['Sin métricas de mejora activas', 'Agrega métricas en la pestaña metrics de ops_metrics_co con tipo improvement y activo TRUE.'] },
+  ];
+
+  const SEM = {
+    verde:      { t: 'En rango',            c: 'var(--green)' },
+    amarillo:   { t: 'Requiere atención',   c: 'var(--yellow)' },
+    rojo:       { t: 'Fuera de rango',      c: 'var(--orange)' },
+    sin_umbral: { t: 'Sin umbral definido', c: 'var(--muted)' },
+  };
+
+  let datos = null;
+  let tabActual = null;
+
+  // ---------- utilidades ----------
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const fmtNum = n => (n === null || n === undefined || n === '') ? '—' : Number(n).toLocaleString('es-CO', { maximumFractionDigits: 1 });
+  const fmtEdad = h => {
+    if (h === null || h === undefined) return '—';
+    if (h < 24) return `${fmtNum(h)} h`;
+    return `${Math.floor(h / 24)} d ${Math.floor(h % 24)} h`;
+  };
+  const fmtFecha = d => new Intl.DateTimeFormat('es-CO', {
+    timeZone: 'America/Bogota', weekday: 'short', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit',
+  }).format(d);
+  const normTipo = t => String(t || '').toLowerCase().replace(/[\s_-]/g, '');
+
+  // Última publicación programada (en ms UTC) según HORAS_PUBLICACION en hora Colombia (UTC-5)
+  function ultimaProgramada(ahora) {
+    const bog = new Date(ahora - 5 * 3600000);
+    const y = bog.getUTCFullYear(), m = bog.getUTCMonth(), d = bog.getUTCDate(), h = bog.getUTCHours();
+    const previas = HORAS_PUBLICACION.filter(x => x <= h);
+    if (previas.length) return Date.UTC(y, m, d, Math.max(...previas) + 5);
+    return Date.UTC(y, m, d - 1, Math.max(...HORAS_PUBLICACION) + 5);
+  }
+
+  // ---------- carga ----------
+  async function cargar() {
+    document.getElementById('actualizado').textContent = 'Cargando datos…';
+    for (const url of FUENTES) {
+      try {
+        const r = await fetch(`${url}?t=${Date.now()}`, { cache: 'no-store' });
+        if (!r.ok) continue;
+        datos = await r.json();
+        render();
+        return;
+      } catch (e) { /* probar la siguiente fuente */ }
+    }
+    datos = null;
+    document.getElementById('actualizado').textContent = 'Sin conexión con los datos';
+    document.getElementById('tabs').innerHTML = '';
+    document.getElementById('contenido').innerHTML =
+      `<div class="aviso error">No se pudo leer ops_metrics.json. Verifica que el archivo exista en la rama main del repo ops_metrics y que GitHub Pages esté activo.</div>`;
+  }
+
+  function agrupar() {
+    const grupos = { top5: [], health: [], improvement: [] };
+    const sinTipo = [];
+    for (const m of (datos?.metricas || [])) {
+      const t = normTipo(m.tipo);
+      if (grupos[t]) grupos[t].push(m); else sinTipo.push(m.metric || '(sin id)');
+    }
+    return { grupos, sinTipo };
+  }
+
+  // ---------- render ----------
+  function render() {
+    const { grupos, sinTipo } = agrupar();
+
+    // Estado de actualización
+    const act = document.getElementById('actualizado');
+    if (datos?.generadoEn) {
+      const gen = new Date(datos.generadoEn).getTime();
+      act.innerHTML = `Actualizado <b>${esc(fmtFecha(gen))}</b>`;
+    } else {
+      act.textContent = 'Sin datos publicados';
+    }
+
+    // Pestañas
+    if (!tabActual) {
+      const desdeHash = location.hash.slice(1);
+      tabActual = TABS.some(t => t.id === desdeHash) ? desdeHash
+        : (TABS.find(t => grupos[t.id].length)?.id || 'top5');
+    }
+    const nav = document.getElementById('tabs');
+    nav.innerHTML = TABS.map(t => `
+      <button role="tab" id="tab-${t.id}" data-tab="${t.id}" aria-selected="${t.id === tabActual}"
+              aria-controls="contenido" tabindex="${t.id === tabActual ? 0 : -1}">
+        ${t.label}<span class="n">${grupos[t.id].length}</span>
+      </button>`).join('');
+    document.getElementById('contenido').setAttribute('aria-labelledby', `tab-${tabActual}`);
+
+    // Contenido
+    let html = '';
+
+    if (!datos || !datos.generadoEn) {
+      html += `<div class="vacio"><strong>Todavía no hay datos publicados</strong>
+        Corre el flujo de n8n o espera la próxima publicación (7:00 o 13:00).</div>`;
+      document.getElementById('contenido').innerHTML = html;
+      return;
+    }
+
+    const ahora = Date.now();
+    const prog = ultimaProgramada(ahora);
+    const gen = new Date(datos.generadoEn).getTime();
+    if (gen < prog - 5 * 60000 && ahora - prog > 30 * 60000) {
+      html += `<div class="aviso">Estos datos son de antes de la última publicación programada. Revisa que el flujo de n8n esté activo.</div>`;
+    }
+
+    const adv = [...(datos.advertencias || [])];
+    if (sinTipo.length) adv.push(`Métricas con tipo no reconocido (usa top5, health o improvement): ${sinTipo.join(', ')}`);
+    if (adv.length) {
+      html += `<details class="adv"><summary>${adv.length} ${adv.length === 1 ? 'advertencia' : 'advertencias'} sobre los datos</summary>
+        <ul>${adv.map(a => `<li>${esc(a)}</li>`).join('')}</ul></details>`;
+    }
+
+    const lista = grupos[tabActual];
+    if (!lista.length) {
+      const [t, d] = TABS.find(t => t.id === tabActual).vacio;
+      html += `<div class="vacio"><strong>${t}</strong>${d}</div>`;
+    } else {
+      html += lista.map(bloqueMetrica).join('');
+    }
+    document.getElementById('contenido').innerHTML = html;
+  }
+
+  function bloqueMetrica(m) {
+    const s = SEM[m.semaforo] || SEM.sin_umbral;
+    const am = m.umbrales?.amarillo, ro = m.umbrales?.rojo;
+    const palabra = m.sentido === 'mayor_mejor' ? 'hasta' : 'desde';
+    const umbrales = (am !== null && am !== undefined && ro !== null && ro !== undefined)
+      ? `Amarillo ${palabra} ${fmtNum(am)}, rojo ${palabra} ${fmtNum(ro)}`
+      : 'Define umbral_amarillo y umbral_rojo en la configuración para activar el semáforo.';
+    const notas = (m.notas || []).length
+      ? `<ul class="notas">${m.notas.map(n => `<li>${esc(n)}</li>`).join('')}</ul>` : '';
+    const detalle = (RENDER[m.metric] || detalleGenerico)(m);
+
+    return `
+      <article class="metrica">
+        <div class="resumen" style="border-left-color:${s.c}">
+          <h2>${esc(m.nombre || m.metric)}</h2>
+          <div class="equipo">${esc(m.equipo || '')}</div>
+          <div class="valor">${fmtNum(m.valor)}</div>
+          <div class="sem"><i style="background:${s.c}"></i>${s.t}</div>
+          <div class="umbrales">${umbrales}</div>
+          ${notas}
+        </div>
+        <div class="detalle">${detalle}</div>
+      </article>`;
+  }
+
+  // ---------- piezas reutilizables ----------
+  function barras(lista, max = 8) {
+    if (!lista?.length) return '<p class="ayuda">Sin datos.</p>';
+    const top = lista.slice(0, max);
+    const mayor = Math.max(...top.map(x => x.n)) || 1;
+    const filas = top.map(x => `
+      <span class="nom" title="${esc(x.nombre)}">${esc(x.nombre)}</span>
+      <span class="pista"><span style="width:${(x.n / mayor) * 100}%"></span></span>
+      <span class="cant">${fmtNum(x.n)}</span>`).join('');
+    const resto = lista.length > max
+      ? `<div class="mas">${lista.length - max} más, con ${fmtNum(lista.slice(max).reduce((s, x) => s + x.n, 0))} servicios en total</div>` : '';
+    return `<div class="barras">${filas}</div>${resto}`;
+  }
+
+  // ---------- detalle por métrica ----------
+  const RENDER = {
+    hl_abiertos(m) {
+      const g = m.grupos || {};
+      const partes = [
+        ['inmediatos', 'Inmediatos en curso', 'var(--teal)'],
+        ['prog_vencidos', 'Programados con la hora ya cumplida', 'var(--orange)'],
+        ['prog_proximos', `Programados en las próximas ${m.ventana_prog_h || 48} h`, 'var(--yellow)'],
+      ];
+      const total = partes.reduce((s, [k]) => s + (g[k] || 0), 0) || 1;
+      const stack = partes.map(([k, , c]) => `<span style="width:${((g[k] || 0) / total) * 100}%;background:${c}"></span>`).join('');
+      const leyenda = partes.map(([k, l, c]) => `<span><i style="background:${c}"></i>${l} <b>${fmtNum(g[k] || 0)}</b></span>`).join('');
+      const futuros = g.prog_futuros
+        ? `<div class="fuera">Además hay ${fmtNum(g.prog_futuros)} programados para dentro de más de ${m.ventana_prog_h || 48} h, que no se cuentan en el total.</div>` : '';
+
+      const a = m.antiguedad || {};
+      const tramos = [['<1h', 'Menos de 1 h'], ['1-4h', '1 a 4 h'], ['4-24h', '4 a 24 h'], ['>24h', 'Más de 24 h']];
+      const mayorA = Math.max(...tramos.map(([k]) => a[k] || 0)) || 1;
+      const hist = tramos.map(([k]) => `
+        <div class="col ${k === '>24h' ? 'alerta' : ''}">
+          <div class="num">${fmtNum(a[k] || 0)}</div>
+          <div class="bar" style="height:${((a[k] || 0) / mayorA) * 78}%"></div>
+        </div>`).join('');
+      const histLbl = tramos.map(([, l]) => `<span>${l}</span>`).join('');
+
+      const segs = (m.porSegmento || []).map(x => `<span class="chip">${esc(x.nombre)}<b>${fmtNum(x.n)}</b></span>`).join('');
+
+      const nombreGrupo = { inmediatos: 'Inmediato', prog_vencidos: 'Programado vencido' };
+      const filas = (m.mas_antiguos || []).map(x => `
+        <tr>
+          <td class="mono">${esc(x.PONumber)}</td>
+          <td>${esc(x.cuenta)}</td>
+          <td>${esc(x.tipo)}</td>
+          <td>${esc(nombreGrupo[x.grupo] || x.grupo)}</td>
+          <td class="edad ${x.edad_h >= 24 ? 'alto' : ''}">${fmtEdad(x.edad_h)}</td>
+        </tr>`).join('');
+
+      return `
+        <section class="sec">
+          <h3>Composición del total</h3>
+          <div class="stack" role="img" aria-label="Composición de servicios abiertos">${stack}</div>
+          <div class="leyenda">${leyenda}</div>
+          ${futuros}
+        </section>
+        <section class="sec">
+          <h3>Tiempo abiertos</h3>
+          <p class="ayuda">Desde que el servicio debía empezar a atenderse: la creación en los inmediatos y la hora programada en los vencidos.</p>
+          <div class="hist">${hist}</div>
+          <div class="hist-lbl">${histLbl}</div>
+        </section>
+        <section class="sec dos">
+          <div><h3>Por segmento</h3><div class="chips">${segs || '<p class="ayuda">Sin datos.</p>'}</div></div>
+          <div><h3>Por cuenta</h3>${barras(m.porCuenta)}</div>
+        </section>
+        <section class="sec">
+          <h3>Los ${fmtNum((m.mas_antiguos || []).length)} más antiguos</h3>
+          <p class="ayuda">Revisa en Helios si siguen en curso o si quedaron sin cerrar.</p>
+          ${filas ? `<div class="tabla"><table>
+            <thead><tr><th>PO</th><th>Cuenta</th><th>Tipo de servicio</th><th>Grupo</th><th style="text-align:right">Abierto hace</th></tr></thead>
+            <tbody>${filas}</tbody></table></div>` : '<p class="ayuda">No hay servicios abiertos con antigüedad calculable.</p>'}
+        </section>`;
+    },
+  };
+
+  // Para métricas sin vista propia: muestra cualquier desglose del tipo [{nombre, n}]
+  function detalleGenerico(m) {
+    const desgloses = Object.entries(m).filter(([, v]) =>
+      Array.isArray(v) && v.length && typeof v[0] === 'object' && 'nombre' in v[0] && 'n' in v[0]);
+    if (!desgloses.length) return '<p class="ayuda">Esta métrica todavía no tiene una vista de detalle.</p>';
+    return desgloses.map(([k, v]) => `
+      <section class="sec"><h3>${esc(k.replace(/^por/, 'Por ').replace(/_/g, ' '))}</h3>${barras(v)}</section>`).join('');
+  }
+
+  // ---------- eventos ----------
+  function irA(id, enfocar) {
+    tabActual = id;
+    history.replaceState(null, '', `#${id}`);
+    render();
+    if (enfocar) document.getElementById(`tab-${id}`)?.focus();
+  }
+  document.getElementById('tabs').addEventListener('click', e => {
+    const b = e.target.closest('[role=tab]');
+    if (b) irA(b.dataset.tab, false);
+  });
+  document.getElementById('tabs').addEventListener('keydown', e => {
+    const i = TABS.findIndex(t => t.id === tabActual);
+    if (e.key === 'ArrowRight') irA(TABS[(i + 1) % TABS.length].id, true);
+    if (e.key === 'ArrowLeft') irA(TABS[(i - 1 + TABS.length) % TABS.length].id, true);
+  });
+  window.addEventListener('hashchange', () => {
+    const id = location.hash.slice(1);
+    if (TABS.some(t => t.id === id) && id !== tabActual) { tabActual = id; render(); }
+  });
+  document.getElementById('recargar').addEventListener('click', cargar);
+
+  cargar();
+  setInterval(cargar, RECARGA_MIN * 60000);
+</script>
+</body>
+</html>
