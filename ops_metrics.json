@@ -1,1 +1,10 @@
-
+{
+  "generadoEn": "2026-10-30T17:42:30.681Z",
+  "filas_leidas": 25930,
+  "metricas": [],
+  "advertencias": [
+    "TipoServicio con dos segmentos distintos: mensajeria_de_pequenos_paquetes",
+    "Tipos sin segmento en la pestaña de segmentos: examenes_prequirurgicos_para_esterilizacion, rear_glass_replacement, informative_call, legal, ambulance, red_descuentos_servicios_medicos, telemedicina_especialistas, basic_mechanics, orientacion_legal_virtual, rescate_1_atoramiento_de_2_o_mas_llantas, telephone_orientation, lavado_chasis_camioneta, taxi, servicio_guarderia_mascota_hospitalizacion, replacement_due_to_theft_of_side_windows, motorcycle_alignment_and_balancing_basic_brake_service, traslado_seguro, beneficios_aliados_pet, on_site_legal_assistance, perfil_hepatorrenal_geriatrico, basic_truck_washing_on_site, directional_replacement, repatriacion_acompanantes, home_transport_illness",
+    "No hay métricas activas en la pestaña metrics (columna activo = TRUE)"
+  ]
+}
