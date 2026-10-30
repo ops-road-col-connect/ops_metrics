@@ -1,14 +1,708 @@
 {
-  "generadoEn": "2026-10-30T20:46:26.644Z",
+  "generadoEn": "2026-10-30T20:48:22.130Z",
   "filas_leidas": 25996,
   "validez": {
     "validos": 20859,
     "no_validos": 5137
   },
-  "metricas": [],
+  "metricas": [
+    {
+      "metric": "hl_abiertos",
+      "nombre": "Servicios abiertos",
+      "tipo": "health",
+      "equipo": "Operación",
+      "sentido": "menor_mejor",
+      "umbrales": {
+        "amarillo": null,
+        "rojo": null
+      },
+      "semaforo": "sin_umbral",
+      "valor": 612,
+      "ventana_prog_h": 48,
+      "grupos": {
+        "inmediatos": 243,
+        "prog_vencidos": 273,
+        "prog_proximos": 96,
+        "prog_futuros": 75
+      },
+      "antiguedad": {
+        "<1h": 4,
+        "1-4h": 29,
+        "4-24h": 171,
+        ">24h": 312
+      },
+      "porSegmento": [
+        {
+          "nombre": "Road",
+          "n": 425
+        },
+        {
+          "nombre": "Concierge",
+          "n": 181
+        },
+        {
+          "nombre": "Sin segmento",
+          "n": 6
+        }
+      ],
+      "porCuenta": [
+        {
+          "nombre": "Quan",
+          "n": 151
+        },
+        {
+          "nombre": "Zurich",
+          "n": 123
+        },
+        {
+          "nombre": "Seguros Mundial",
+          "n": 107
+        },
+        {
+          "nombre": "Seguros Mundial Vial",
+          "n": 91
+        },
+        {
+          "nombre": "Qualitas Colombia",
+          "n": 46
+        },
+        {
+          "nombre": "SURAMERICANA",
+          "n": 25
+        },
+        {
+          "nombre": "ASISYA",
+          "n": 20
+        },
+        {
+          "nombre": "Cardif",
+          "n": 14
+        },
+        {
+          "nombre": "Connect Col OnDemand",
+          "n": 8
+        },
+        {
+          "nombre": "Fincomercio Mascotas",
+          "n": 6
+        },
+        {
+          "nombre": "Auteco",
+          "n": 6
+        },
+        {
+          "nombre": "TESLA",
+          "n": 5
+        },
+        {
+          "nombre": "General Motors",
+          "n": 4
+        },
+        {
+          "nombre": "Ituran",
+          "n": 2
+        },
+        {
+          "nombre": "Movistar Asistencia",
+          "n": 2
+        },
+        {
+          "nombre": "Sierracol",
+          "n": 1
+        },
+        {
+          "nombre": "Plenitud",
+          "n": 1
+        }
+      ],
+      "mas_antiguos": [
+        {
+          "PONumber": "5434167",
+          "cuenta": "Zurich",
+          "tipo": "onsite_legal_assistance",
+          "segmento": "Road",
+          "grupo": "inmediatos",
+          "edad_h": 2063.9
+        },
+        {
+          "PONumber": "5438393",
+          "cuenta": "Connect Col OnDemand",
+          "tipo": "basic_vehicle_washing_on_site",
+          "segmento": "Road",
+          "grupo": "inmediatos",
+          "edad_h": 2023.6
+        },
+        {
+          "PONumber": "5442847",
+          "cuenta": "Zurich",
+          "tipo": "onsite_legal_assistance",
+          "segmento": "Road",
+          "grupo": "inmediatos",
+          "edad_h": 1984.4
+        },
+        {
+          "PONumber": "5463137",
+          "cuenta": "ASISYA",
+          "tipo": "transfer_due_to_vehicle_immobilization",
+          "segmento": "Concierge",
+          "grupo": "inmediatos",
+          "edad_h": 1794.7
+        },
+        {
+          "PONumber": "5466391",
+          "cuenta": "Quan",
+          "tipo": "orientacion_diagnostico_mantenimiento_servicio_operacional",
+          "segmento": "Concierge",
+          "grupo": "inmediatos",
+          "edad_h": 1761
+        },
+        {
+          "PONumber": "5454573",
+          "cuenta": "Seguros Mundial",
+          "tipo": "instalacion",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 1686.8
+        },
+        {
+          "PONumber": "5480944",
+          "cuenta": "Zurich",
+          "tipo": "onsite_legal_assistance",
+          "segmento": "Road",
+          "grupo": "inmediatos",
+          "edad_h": 1648.6
+        },
+        {
+          "PONumber": "5481942",
+          "cuenta": "Qualitas Colombia",
+          "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
+          "segmento": "Concierge",
+          "grupo": "inmediatos",
+          "edad_h": 1631.1
+        },
+        {
+          "PONumber": "5485299",
+          "cuenta": "Zurich",
+          "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
+          "segmento": "Concierge",
+          "grupo": "inmediatos",
+          "edad_h": 1605.9
+        },
+        {
+          "PONumber": "5486998",
+          "cuenta": "Movistar Asistencia",
+          "tipo": "taxi",
+          "segmento": "Sin segmento",
+          "grupo": "prog_vencidos",
+          "edad_h": 1572
+        },
+        {
+          "PONumber": "5494082",
+          "cuenta": "Zurich",
+          "tipo": "onsite_legal_assistance",
+          "segmento": "Road",
+          "grupo": "inmediatos",
+          "edad_h": 1534.8
+        },
+        {
+          "PONumber": "5512758",
+          "cuenta": "Seguros Mundial",
+          "tipo": "reposicion_farola",
+          "segmento": "Road",
+          "grupo": "inmediatos",
+          "edad_h": 1373.2
+        },
+        {
+          "PONumber": "5466585",
+          "cuenta": "Seguros Mundial",
+          "tipo": "reposicion_farola",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 1335.8
+        },
+        {
+          "PONumber": "5432856",
+          "cuenta": "Seguros Mundial",
+          "tipo": "reposicion_stop",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 1335.8
+        },
+        {
+          "PONumber": "5453296",
+          "cuenta": "Seguros Mundial",
+          "tipo": "glass_replacement",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 1280.8
+        },
+        {
+          "PONumber": "5535451",
+          "cuenta": "Zurich",
+          "tipo": "onsite_legal_assistance",
+          "segmento": "Road",
+          "grupo": "inmediatos",
+          "edad_h": 1183.2
+        },
+        {
+          "PONumber": "5535578",
+          "cuenta": "Zurich",
+          "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
+          "segmento": "Concierge",
+          "grupo": "inmediatos",
+          "edad_h": 1182.6
+        },
+        {
+          "PONumber": "5503451",
+          "cuenta": "Seguros Mundial",
+          "tipo": "reposicion_farola",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 1119.8
+        },
+        {
+          "PONumber": "5547446",
+          "cuenta": "Seguros Mundial Vial",
+          "tipo": "towHeavyWeight",
+          "segmento": "Road",
+          "grupo": "inmediatos",
+          "edad_h": 1081
+        },
+        {
+          "PONumber": "5546350",
+          "cuenta": "Seguros Mundial",
+          "tipo": "instalacion",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 1062.8
+        },
+        {
+          "PONumber": "5551785",
+          "cuenta": "Zurich",
+          "tipo": "asesoria_juridica_accidente_transito",
+          "segmento": "Road",
+          "grupo": "inmediatos",
+          "edad_h": 1042.3
+        },
+        {
+          "PONumber": "5553386",
+          "cuenta": "Zurich",
+          "tipo": "onsite_legal_assistance",
+          "segmento": "Road",
+          "grupo": "inmediatos",
+          "edad_h": 1032.6
+        },
+        {
+          "PONumber": "5513889",
+          "cuenta": "Seguros Mundial",
+          "tipo": "reposicion_farola",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 1011.8
+        },
+        {
+          "PONumber": "5440847",
+          "cuenta": "Seguros Mundial",
+          "tipo": "reposicion_farola",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 999.8
+        },
+        {
+          "PONumber": "5519117",
+          "cuenta": "Seguros Mundial",
+          "tipo": "reposicion_farola",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 999.8
+        },
+        {
+          "PONumber": "5510681",
+          "cuenta": "Seguros Mundial",
+          "tipo": "reposicion_farola",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 999.8
+        },
+        {
+          "PONumber": "5509380",
+          "cuenta": "Seguros Mundial",
+          "tipo": "reposicion_farola",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 999.8
+        },
+        {
+          "PONumber": "5503890",
+          "cuenta": "Seguros Mundial",
+          "tipo": "reposicion_farola",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 999.8
+        },
+        {
+          "PONumber": "5564182",
+          "cuenta": "Zurich",
+          "tipo": "asesoria_juridica_accidente_transito",
+          "segmento": "Road",
+          "grupo": "inmediatos",
+          "edad_h": 936.7
+        },
+        {
+          "PONumber": "5564343",
+          "cuenta": "Quan",
+          "tipo": "orientacion_diagnostico_mantenimiento_servicio_operacional",
+          "segmento": "Concierge",
+          "grupo": "inmediatos",
+          "edad_h": 936
+        }
+      ],
+      "notas": []
+    },
+    {
+      "metric": "vol_flujo_dia",
+      "nombre": "Flujo diario",
+      "tipo": "health",
+      "equipo": "Operación",
+      "sentido": "menor_mejor",
+      "umbrales": {
+        "amarillo": null,
+        "rojo": null
+      },
+      "semaforo": "sin_umbral",
+      "valor": 65,
+      "formato": "signo",
+      "dia_referencia": "2026-10-29",
+      "ayer": {
+        "creados": 319,
+        "cerrados": 254,
+        "neto": 65
+      },
+      "promedio": {
+        "creados": 255.9,
+        "cerrados": 233.8,
+        "neto": 22.1,
+        "dias": 30
+      },
+      "serie": [
+        {
+          "dia": "2026-09-30",
+          "creados": 214,
+          "creados_finalizados": 197,
+          "creados_activos": 3,
+          "creados_cancelados": 14,
+          "cerrados": 189,
+          "neto": 25,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-01",
+          "creados": 207,
+          "creados_finalizados": 191,
+          "creados_activos": 5,
+          "creados_cancelados": 11,
+          "cerrados": 177,
+          "neto": 30,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-02",
+          "creados": 265,
+          "creados_finalizados": 243,
+          "creados_activos": 2,
+          "creados_cancelados": 20,
+          "cerrados": 206,
+          "neto": 59,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-03",
+          "creados": 248,
+          "creados_finalizados": 223,
+          "creados_activos": 3,
+          "creados_cancelados": 22,
+          "cerrados": 234,
+          "neto": 14,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-04",
+          "creados": 160,
+          "creados_finalizados": 154,
+          "creados_activos": 0,
+          "creados_cancelados": 6,
+          "cerrados": 145,
+          "neto": 15,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-05",
+          "creados": 255,
+          "creados_finalizados": 238,
+          "creados_activos": 6,
+          "creados_cancelados": 11,
+          "cerrados": 255,
+          "neto": 0,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-06",
+          "creados": 210,
+          "creados_finalizados": 195,
+          "creados_activos": 6,
+          "creados_cancelados": 9,
+          "cerrados": 241,
+          "neto": -31,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-07",
+          "creados": 213,
+          "creados_finalizados": 199,
+          "creados_activos": 5,
+          "creados_cancelados": 9,
+          "cerrados": 177,
+          "neto": 36,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-08",
+          "creados": 249,
+          "creados_finalizados": 224,
+          "creados_activos": 5,
+          "creados_cancelados": 20,
+          "cerrados": 183,
+          "neto": 66,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-09",
+          "creados": 237,
+          "creados_finalizados": 216,
+          "creados_activos": 4,
+          "creados_cancelados": 17,
+          "cerrados": 241,
+          "neto": -4,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-10",
+          "creados": 269,
+          "creados_finalizados": 245,
+          "creados_activos": 1,
+          "creados_cancelados": 23,
+          "cerrados": 243,
+          "neto": 26,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-11",
+          "creados": 178,
+          "creados_finalizados": 164,
+          "creados_activos": 1,
+          "creados_cancelados": 13,
+          "cerrados": 193,
+          "neto": -15,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-12",
+          "creados": 215,
+          "creados_finalizados": 203,
+          "creados_activos": 2,
+          "creados_cancelados": 10,
+          "cerrados": 155,
+          "neto": 60,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-13",
+          "creados": 317,
+          "creados_finalizados": 290,
+          "creados_activos": 8,
+          "creados_cancelados": 19,
+          "cerrados": 305,
+          "neto": 12,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-14",
+          "creados": 263,
+          "creados_finalizados": 246,
+          "creados_activos": 7,
+          "creados_cancelados": 10,
+          "cerrados": 244,
+          "neto": 19,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-15",
+          "creados": 258,
+          "creados_finalizados": 239,
+          "creados_activos": 8,
+          "creados_cancelados": 11,
+          "cerrados": 243,
+          "neto": 15,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-16",
+          "creados": 344,
+          "creados_finalizados": 325,
+          "creados_activos": 9,
+          "creados_cancelados": 10,
+          "cerrados": 252,
+          "neto": 92,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-17",
+          "creados": 294,
+          "creados_finalizados": 257,
+          "creados_activos": 11,
+          "creados_cancelados": 26,
+          "cerrados": 276,
+          "neto": 18,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-18",
+          "creados": 163,
+          "creados_finalizados": 145,
+          "creados_activos": 3,
+          "creados_cancelados": 15,
+          "cerrados": 198,
+          "neto": -35,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-19",
+          "creados": 280,
+          "creados_finalizados": 261,
+          "creados_activos": 11,
+          "creados_cancelados": 8,
+          "cerrados": 286,
+          "neto": -6,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-20",
+          "creados": 281,
+          "creados_finalizados": 254,
+          "creados_activos": 14,
+          "creados_cancelados": 13,
+          "cerrados": 227,
+          "neto": 54,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-21",
+          "creados": 238,
+          "creados_finalizados": 215,
+          "creados_activos": 13,
+          "creados_cancelados": 10,
+          "cerrados": 254,
+          "neto": -16,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-22",
+          "creados": 268,
+          "creados_finalizados": 229,
+          "creados_activos": 20,
+          "creados_cancelados": 19,
+          "cerrados": 250,
+          "neto": 18,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-23",
+          "creados": 316,
+          "creados_finalizados": 268,
+          "creados_activos": 29,
+          "creados_cancelados": 19,
+          "cerrados": 212,
+          "neto": 104,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-24",
+          "creados": 306,
+          "creados_finalizados": 263,
+          "creados_activos": 13,
+          "creados_cancelados": 30,
+          "cerrados": 336,
+          "neto": -30,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-25",
+          "creados": 193,
+          "creados_finalizados": 169,
+          "creados_activos": 14,
+          "creados_cancelados": 10,
+          "cerrados": 207,
+          "neto": -14,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-26",
+          "creados": 327,
+          "creados_finalizados": 281,
+          "creados_activos": 33,
+          "creados_cancelados": 13,
+          "cerrados": 307,
+          "neto": 20,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-27",
+          "creados": 285,
+          "creados_finalizados": 229,
+          "creados_activos": 38,
+          "creados_cancelados": 18,
+          "cerrados": 283,
+          "neto": 2,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-28",
+          "creados": 304,
+          "creados_finalizados": 220,
+          "creados_activos": 78,
+          "creados_cancelados": 6,
+          "cerrados": 240,
+          "neto": 64,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-29",
+          "creados": 319,
+          "creados_finalizados": 129,
+          "creados_activos": 176,
+          "creados_cancelados": 14,
+          "cerrados": 254,
+          "neto": 65,
+          "parcial": false
+        },
+        {
+          "dia": "2026-10-30",
+          "creados": 118,
+          "creados_finalizados": 23,
+          "creados_activos": 92,
+          "creados_cancelados": 3,
+          "cerrados": 93,
+          "neto": 25,
+          "parcial": true
+        }
+      ],
+      "notas": [
+        "1 finalizados sin FechaFinished (no cuentan como cerrados)"
+      ]
+    }
+  ],
   "advertencias": [
     "TipoServicio con dos segmentos distintos: mensajeria_de_pequenos_paquetes",
-    "Tipos sin segmento en la pestaña de segmentos: telephone_orientation, rescate_1_atoramiento_de_2_o_mas_llantas, servicio_guarderia_mascota_hospitalizacion, telemedicina_especialistas, basic_mechanics, replacement_due_to_theft_of_side_windows, repatriacion_acompanantes, beneficios_aliados_pet, taxi, motorcycle_alignment_and_balancing_basic_brake_service, ambulance, lavado_chasis_camioneta, informative_call, examenes_prequirurgicos_para_esterilizacion, red_descuentos_servicios_medicos, orientacion_legal_virtual, rear_glass_replacement, home_transport_illness, legal, perfil_hepatorrenal_geriatrico, basic_truck_washing_on_site, directional_replacement, on_site_legal_assistance, traslado_seguro",
-    "No hay métricas activas en la pestaña metrics (columna activo = TRUE)"
+    "Tipos sin segmento en la pestaña de segmentos: telephone_orientation, rescate_1_atoramiento_de_2_o_mas_llantas, servicio_guarderia_mascota_hospitalizacion, telemedicina_especialistas, basic_mechanics, replacement_due_to_theft_of_side_windows, repatriacion_acompanantes, beneficios_aliados_pet, taxi, motorcycle_alignment_and_balancing_basic_brake_service, ambulance, lavado_chasis_camioneta, informative_call, examenes_prequirurgicos_para_esterilizacion, red_descuentos_servicios_medicos, orientacion_legal_virtual, rear_glass_replacement, home_transport_illness, legal, perfil_hepatorrenal_geriatrico, basic_truck_washing_on_site, directional_replacement, on_site_legal_assistance, traslado_seguro"
   ]
 }
