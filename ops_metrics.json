@@ -1,5 +1,5 @@
 {
-  "generadoEn": "2026-11-07T12:00:22.255Z",
+  "generadoEn": "2026-11-07T18:00:24.590Z",
   "filas_leidas": 28452,
   "validez": {
     "validos": 22870,
@@ -24,7 +24,7 @@
         "rojo": null
       },
       "semaforo": "sin_umbral",
-      "valor": 448,
+      "valor": 450,
       "matriz_mes_tipo": {
         "meses": [
           "2026-08",
@@ -44,6 +44,14 @@
             "total": 65
           },
           {
+            "tipo": "towBreakdown",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-11": 48
+            },
+            "total": 48
+          },
+          {
             "tipo": "onsite_legal_assistance",
             "segmento": "Road",
             "por_mes": {
@@ -51,14 +59,6 @@
               "2026-11": 24,
               "2026-10": 16,
               "2026-09": 2
-            },
-            "total": 46
-          },
-          {
-            "tipo": "towBreakdown",
-            "segmento": "Road",
-            "por_mes": {
-              "2026-11": 46
             },
             "total": 46
           },
@@ -292,26 +292,26 @@
           "2026-08": 7,
           "2026-09": 12,
           "2026-10": 176,
-          "2026-11": 253
+          "2026-11": 255
         }
       },
       "ventana_prog_h": 48,
       "grupos": {
         "inmediatos": 238,
-        "prog_vencidos": 173,
-        "prog_proximos": 37,
-        "prog_futuros": 62
+        "prog_vencidos": 187,
+        "prog_proximos": 25,
+        "prog_futuros": 60
       },
       "antiguedad": {
-        "<1h": 3,
-        "1-4h": 3,
-        "4-24h": 136,
-        ">24h": 269
+        "<1h": 0,
+        "1-4h": 2,
+        "4-24h": 112,
+        ">24h": 311
       },
       "porSegmento": [
         {
           "nombre": "Road",
-          "n": 448
+          "n": 450
         }
       ],
       "porCuenta": [
@@ -325,7 +325,7 @@
         },
         {
           "nombre": "Qualitas Colombia",
-          "n": 68
+          "n": 70
         },
         {
           "nombre": "Quan",
@@ -379,7 +379,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 2247.1
+          "edad_h": 2253.1
         },
         {
           "PONumber": "5438393",
@@ -387,7 +387,7 @@
           "tipo": "basic_vehicle_washing_on_site",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 2206.8
+          "edad_h": 2212.8
         },
         {
           "PONumber": "5442847",
@@ -395,7 +395,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 2167.6
+          "edad_h": 2173.6
         },
         {
           "PONumber": "5480944",
@@ -403,7 +403,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1831.8
+          "edad_h": 1837.8
         },
         {
           "PONumber": "5481942",
@@ -411,7 +411,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1814.3
+          "edad_h": 1820.3
         },
         {
           "PONumber": "5485299",
@@ -419,7 +419,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1789.1
+          "edad_h": 1795.1
         },
         {
           "PONumber": "5494082",
@@ -427,7 +427,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1718
+          "edad_h": 1724
         },
         {
           "PONumber": "5535451",
@@ -435,7 +435,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1366.4
+          "edad_h": 1372.4
         },
         {
           "PONumber": "5535578",
@@ -443,7 +443,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1365.8
+          "edad_h": 1371.8
         },
         {
           "PONumber": "5547446",
@@ -451,7 +451,7 @@
           "tipo": "towHeavyWeight",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1264.2
+          "edad_h": 1270.2
         },
         {
           "PONumber": "5551785",
@@ -459,7 +459,7 @@
           "tipo": "asesoria_juridica_accidente_transito",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1225.5
+          "edad_h": 1231.5
         },
         {
           "PONumber": "5553386",
@@ -467,7 +467,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1215.8
+          "edad_h": 1221.8
         },
         {
           "PONumber": "5564182",
@@ -475,7 +475,7 @@
           "tipo": "asesoria_juridica_accidente_transito",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1119.9
+          "edad_h": 1125.9
         },
         {
           "PONumber": "5569822",
@@ -483,7 +483,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1075.2
+          "edad_h": 1081.2
         },
         {
           "PONumber": "5577473",
@@ -491,7 +491,7 @@
           "tipo": "custodia_del_vehiculo_asegurado",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1019
+          "edad_h": 1025
         },
         {
           "PONumber": "5581313",
@@ -499,7 +499,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 978.1
+          "edad_h": 984.1
         },
         {
           "PONumber": "5581318",
@@ -507,7 +507,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 978
+          "edad_h": 984
         },
         {
           "PONumber": "5590994",
@@ -515,7 +515,7 @@
           "tipo": "desplazamiento",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 903.4
+          "edad_h": 909.4
         },
         {
           "PONumber": "5595007",
@@ -523,7 +523,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 875
+          "edad_h": 881
         },
         {
           "PONumber": "5604012",
@@ -531,7 +531,7 @@
           "tipo": "custodia_del_vehiculo_asegurado",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 788.4
+          "edad_h": 794.4
         },
         {
           "PONumber": "5607979",
@@ -539,7 +539,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 761.9
+          "edad_h": 767.9
         },
         {
           "PONumber": "5610371",
@@ -547,7 +547,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 741.3
+          "edad_h": 747.3
         },
         {
           "PONumber": "5610137",
@@ -555,7 +555,7 @@
           "tipo": "towHeavyWeight",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 719
+          "edad_h": 725
         },
         {
           "PONumber": "5616971",
@@ -563,7 +563,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 691.2
+          "edad_h": 697.2
         },
         {
           "PONumber": "5617458",
@@ -571,7 +571,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 688.7
+          "edad_h": 694.7
         },
         {
           "PONumber": "5555660",
@@ -579,7 +579,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 679
+          "edad_h": 685
         },
         {
           "PONumber": "5628867",
@@ -587,7 +587,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 591.4
+          "edad_h": 597.4
         },
         {
           "PONumber": "5629076",
@@ -595,7 +595,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 590.4
+          "edad_h": 596.4
         },
         {
           "PONumber": "5629629",
@@ -603,7 +603,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 587.8
+          "edad_h": 593.8
         },
         {
           "PONumber": "5629620",
@@ -611,7 +611,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 587.8
+          "edad_h": 593.8
         }
       ],
       "notas": []
