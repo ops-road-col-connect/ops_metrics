@@ -1,16 +1,16 @@
 {
-  "generadoEn": "2026-11-22T18:00:08.717Z",
-  "filas_leidas": 25025,
+  "generadoEn": "2026-11-23T12:00:18.031Z",
+  "filas_leidas": 25311,
   "validez": {
-    "validos": 20202,
-    "no_validos": 4823
+    "validos": 20404,
+    "no_validos": 4907
   },
   "universo": {
     "segmentos": [
       "Road"
     ],
-    "servicios": 20615,
-    "validos": 17016
+    "servicios": 20848,
+    "validos": 17201
   },
   "metricas": [
     {
@@ -24,7 +24,7 @@
         "rojo": null
       },
       "semaforo": "sin_umbral",
-      "valor": 441,
+      "valor": 411,
       "matriz_mes_tipo": {
         "meses": [
           "2026-09",
@@ -33,40 +33,40 @@
         ],
         "filas": [
           {
-            "tipo": "towBreakdown",
-            "segmento": "Road",
-            "por_mes": {
-              "2026-11": 61
-            },
-            "total": 61
-          },
-          {
             "tipo": "onsite_legal_assistance",
             "segmento": "Road",
             "por_mes": {
-              "2026-11": 35,
               "2026-09": 2,
-              "2026-10": 10
+              "2026-10": 10,
+              "2026-11": 48
             },
-            "total": 47
+            "total": 60
           },
           {
-            "tipo": "basic_vehicle_washing_on_site",
+            "tipo": "towBreakdown",
             "segmento": "Road",
             "por_mes": {
-              "2026-11": 43
+              "2026-11": 49
             },
-            "total": 43
+            "total": 49
           },
           {
             "tipo": "custodia_del_vehiculo_asegurado",
             "segmento": "Road",
             "por_mes": {
-              "2026-11": 35,
               "2026-10": 4,
+              "2026-11": 39,
               "2026-09": 1
             },
-            "total": 40
+            "total": 44
+          },
+          {
+            "tipo": "basic_vehicle_washing_on_site",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-11": 44
+            },
+            "total": 44
           },
           {
             "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
@@ -82,9 +82,9 @@
             "tipo": "reposicion_farola",
             "segmento": "Road",
             "por_mes": {
+              "2026-11": 14,
               "2026-09": 4,
-              "2026-11": 13,
-              "2026-10": 16
+              "2026-10": 15
             },
             "total": 33
           },
@@ -92,112 +92,106 @@
             "tipo": "desplazamiento",
             "segmento": "Road",
             "por_mes": {
-              "2026-11": 25,
-              "2026-10": 1,
-              "2026-09": 1
+              "2026-11": 21,
+              "2026-09": 1,
+              "2026-10": 1
             },
-            "total": 27
+            "total": 23
           },
           {
             "tipo": "towCollision",
             "segmento": "Road",
             "por_mes": {
-              "2026-11": 22,
+              "2026-11": 18,
               "2026-10": 3
             },
-            "total": 25
-          },
-          {
-            "tipo": "reposicion_stop",
-            "segmento": "Road",
-            "por_mes": {
-              "2026-09": 1,
-              "2026-10": 12,
-              "2026-11": 8
-            },
             "total": 21
-          },
-          {
-            "tipo": "towHeavyWeight",
-            "segmento": "Road",
-            "por_mes": {
-              "2026-10": 2,
-              "2026-11": 18
-            },
-            "total": 20
-          },
-          {
-            "tipo": "jumpStart",
-            "segmento": "Road",
-            "por_mes": {
-              "2026-11": 16,
-              "2026-10": 2
-            },
-            "total": 18
           },
           {
             "tipo": "orientacion_legal_telefonica",
             "segmento": "Road",
             "por_mes": {
-              "2026-11": 15
+              "2026-11": 19
             },
-            "total": 15
+            "total": 19
           },
           {
-            "tipo": "towExtraction",
+            "tipo": "reposicion_stop",
             "segmento": "Road",
             "por_mes": {
-              "2026-11": 9
+              "2026-10": 9,
+              "2026-09": 1,
+              "2026-11": 8
             },
-            "total": 9
+            "total": 18
           },
           {
-            "tipo": "tow_heavy_weight_collision",
+            "tipo": "jumpStart",
             "segmento": "Road",
             "por_mes": {
-              "2026-11": 7
+              "2026-11": 10,
+              "2026-10": 2
             },
-            "total": 7
+            "total": 12
+          },
+          {
+            "tipo": "towHeavyWeight",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-11": 10,
+              "2026-10": 2
+            },
+            "total": 12
           },
           {
             "tipo": "glass_replacement",
             "segmento": "Road",
             "por_mes": {
-              "2026-10": 6
+              "2026-10": 6,
+              "2026-11": 1
+            },
+            "total": 7
+          },
+          {
+            "tipo": "towExtraction",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-11": 6
             },
             "total": 6
-          },
-          {
-            "tipo": "conductor_designado",
-            "segmento": "Road",
-            "por_mes": {
-              "2026-11": 5
-            },
-            "total": 5
-          },
-          {
-            "tipo": "locksmith",
-            "segmento": "Road",
-            "por_mes": {
-              "2026-11": 5
-            },
-            "total": 5
           },
           {
             "tipo": "replacement_of_a_burst_tire",
             "segmento": "Road",
             "por_mes": {
-              "2026-10": 4
+              "2026-10": 4,
+              "2026-11": 1
             },
-            "total": 4
+            "total": 5
           },
           {
-            "tipo": "conductor_elegido",
+            "tipo": "taxi_to_airport",
             "segmento": "Road",
             "por_mes": {
-              "2026-11": 4
+              "2026-11": 5
             },
-            "total": 4
+            "total": 5
+          },
+          {
+            "tipo": "flatTire",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-11": 2
+            },
+            "total": 2
+          },
+          {
+            "tipo": "conductor_designado",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-11": 2
+            },
+            "total": 2
           },
           {
             "tipo": "garantia_de_llanta",
@@ -218,14 +212,6 @@
             "total": 2
           },
           {
-            "tipo": "flatTire",
-            "segmento": "Road",
-            "por_mes": {
-              "2026-11": 2
-            },
-            "total": 2
-          },
-          {
             "tipo": "asesoria_juridica_accidente_transito",
             "segmento": "Road",
             "por_mes": {
@@ -234,28 +220,36 @@
             "total": 2
           },
           {
-            "tipo": "taxi_to_airport",
+            "tipo": "tow_heavy_weight_collision",
             "segmento": "Road",
             "por_mes": {
               "2026-11": 2
             },
             "total": 2
+          },
+          {
+            "tipo": "replacement_due_to_theft_of_side_windows",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-09": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "fuelDelivery",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-11": 1
+            },
+            "total": 1
           },
           {
             "tipo": "traslado_familiar",
             "segmento": "Road",
             "por_mes": {
-              "2026-11": 2
+              "2026-11": 1
             },
-            "total": 2
-          },
-          {
-            "tipo": "towTire",
-            "segmento": "Road",
-            "por_mes": {
-              "2026-11": 2
-            },
-            "total": 2
+            "total": 1
           },
           {
             "tipo": "instalacion",
@@ -274,37 +268,45 @@
             "total": 1
           },
           {
-            "tipo": "replacement_due_to_theft_of_side_windows",
+            "tipo": "locksmith",
             "segmento": "Road",
             "por_mes": {
-              "2026-09": 1
+              "2026-11": 1
+            },
+            "total": 1
+          },
+          {
+            "tipo": "conductor_elegido",
+            "segmento": "Road",
+            "por_mes": {
+              "2026-11": 1
             },
             "total": 1
           }
         ],
         "totales_mes": {
           "2026-09": 16,
-          "2026-10": 80,
-          "2026-11": 345
+          "2026-10": 76,
+          "2026-11": 319
         }
       },
       "ventana_prog_h": 48,
       "grupos": {
-        "inmediatos": 280,
-        "prog_vencidos": 135,
-        "prog_proximos": 26,
-        "prog_futuros": 62
+        "inmediatos": 245,
+        "prog_vencidos": 114,
+        "prog_proximos": 52,
+        "prog_futuros": 64
       },
       "antiguedad": {
-        "<1h": 0,
+        "<1h": 4,
         "1-4h": 3,
-        "4-24h": 67,
-        ">24h": 345
+        "4-24h": 69,
+        ">24h": 283
       },
       "porSegmento": [
         {
           "nombre": "Road",
-          "n": 441
+          "n": 411
         }
       ],
       "porCuenta": [
@@ -314,62 +316,50 @@
         },
         {
           "nombre": "Qualitas Colombia",
-          "n": 92
+          "n": 85
         },
         {
           "nombre": "Seguros Mundial",
-          "n": 66
+          "n": 65
         },
         {
           "nombre": "Quan",
-          "n": 49
+          "n": 46
         },
         {
           "nombre": "Seguros Mundial Vial",
-          "n": 41
-        },
-        {
-          "nombre": "ASISYA",
-          "n": 22
+          "n": 34
         },
         {
           "nombre": "General Motors",
-          "n": 9
+          "n": 10
         },
         {
           "nombre": "Connect Col OnDemand",
-          "n": 8
+          "n": 9
+        },
+        {
+          "nombre": "ASISYA",
+          "n": 9
         },
         {
           "nombre": "Ford",
-          "n": 4
-        },
-        {
-          "nombre": "Auteco",
-          "n": 4
+          "n": 6
         },
         {
           "nombre": "TESLA",
-          "n": 3
+          "n": 5
         },
         {
           "nombre": "Plan de beneficios colaboradores Connect",
           "n": 2
         },
         {
-          "nombre": "Renault",
-          "n": 1
-        },
-        {
-          "nombre": "Movistar Asistencia",
-          "n": 1
+          "nombre": "Auteco",
+          "n": 2
         },
         {
           "nombre": "Ituran",
-          "n": 1
-        },
-        {
-          "nombre": "CorreCol",
           "n": 1
         }
       ],
@@ -380,7 +370,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1732.4
+          "edad_h": 1750.4
         },
         {
           "PONumber": "5535578",
@@ -388,7 +378,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1731.7
+          "edad_h": 1749.7
         },
         {
           "PONumber": "5551785",
@@ -396,7 +386,7 @@
           "tipo": "asesoria_juridica_accidente_transito",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1591.5
+          "edad_h": 1609.5
         },
         {
           "PONumber": "5553386",
@@ -404,7 +394,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1581.7
+          "edad_h": 1599.8
         },
         {
           "PONumber": "5564182",
@@ -412,7 +402,7 @@
           "tipo": "asesoria_juridica_accidente_transito",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1485.9
+          "edad_h": 1503.9
         },
         {
           "PONumber": "5569822",
@@ -420,7 +410,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1441.2
+          "edad_h": 1459.2
         },
         {
           "PONumber": "5577473",
@@ -428,7 +418,7 @@
           "tipo": "custodia_del_vehiculo_asegurado",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1385
+          "edad_h": 1403
         },
         {
           "PONumber": "5581313",
@@ -436,7 +426,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1344.1
+          "edad_h": 1362.1
         },
         {
           "PONumber": "5581318",
@@ -444,7 +434,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1344
+          "edad_h": 1362
         },
         {
           "PONumber": "5590994",
@@ -452,7 +442,7 @@
           "tipo": "desplazamiento",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1269.4
+          "edad_h": 1287.4
         },
         {
           "PONumber": "5604012",
@@ -460,7 +450,7 @@
           "tipo": "custodia_del_vehiculo_asegurado",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1154.4
+          "edad_h": 1172.4
         },
         {
           "PONumber": "5607979",
@@ -468,7 +458,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1127.9
+          "edad_h": 1145.9
         },
         {
           "PONumber": "5610371",
@@ -476,7 +466,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1107.3
+          "edad_h": 1125.3
         },
         {
           "PONumber": "5610137",
@@ -484,7 +474,7 @@
           "tipo": "towHeavyWeight",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 1085
+          "edad_h": 1103
         },
         {
           "PONumber": "5616971",
@@ -492,7 +482,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1057.2
+          "edad_h": 1075.2
         },
         {
           "PONumber": "5617458",
@@ -500,7 +490,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 1054.7
+          "edad_h": 1072.7
         },
         {
           "PONumber": "5555660",
@@ -508,7 +498,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 1045
+          "edad_h": 1063
         },
         {
           "PONumber": "5628867",
@@ -516,7 +506,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 957.4
+          "edad_h": 975.4
         },
         {
           "PONumber": "5629076",
@@ -524,7 +514,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 956.4
+          "edad_h": 974.4
         },
         {
           "PONumber": "5629629",
@@ -532,7 +522,7 @@
           "tipo": "reposicion_farola",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 953.8
+          "edad_h": 971.8
         },
         {
           "PONumber": "5632722",
@@ -540,7 +530,7 @@
           "tipo": "asistencia_juridica_audiencia_transito_conciliacion",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 931
+          "edad_h": 949
         },
         {
           "PONumber": "5635258",
@@ -548,7 +538,7 @@
           "tipo": "desplazamiento",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 910.4
+          "edad_h": 928.4
         },
         {
           "PONumber": "5637090",
@@ -556,7 +546,7 @@
           "tipo": "replacement_of_a_burst_tire",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 893.2
+          "edad_h": 911.2
         },
         {
           "PONumber": "5638109",
@@ -564,7 +554,7 @@
           "tipo": "custodia_del_vehiculo_asegurado",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 888.8
+          "edad_h": 906.8
         },
         {
           "PONumber": "5639315",
@@ -572,7 +562,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 883.7
+          "edad_h": 901.7
         },
         {
           "PONumber": "5639518",
@@ -580,23 +570,7 @@
           "tipo": "custodia_del_vehiculo_asegurado",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 882.7
-        },
-        {
-          "PONumber": "5594622",
-          "cuenta": "Seguros Mundial",
-          "tipo": "replacement_of_a_burst_tire",
-          "segmento": "Road",
-          "grupo": "prog_vencidos",
-          "edad_h": 877
-        },
-        {
-          "PONumber": "5599430",
-          "cuenta": "Connect Col OnDemand",
-          "tipo": "instalacion",
-          "segmento": "Road",
-          "grupo": "prog_vencidos",
-          "edad_h": 877
+          "edad_h": 900.7
         },
         {
           "PONumber": "5583107",
@@ -604,7 +578,23 @@
           "tipo": "replacement_due_to_theft_of_side_windows",
           "segmento": "Road",
           "grupo": "prog_vencidos",
-          "edad_h": 877
+          "edad_h": 895
+        },
+        {
+          "PONumber": "5599430",
+          "cuenta": "Connect Col OnDemand",
+          "tipo": "instalacion",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 895
+        },
+        {
+          "PONumber": "5594622",
+          "cuenta": "Seguros Mundial",
+          "tipo": "replacement_of_a_burst_tire",
+          "segmento": "Road",
+          "grupo": "prog_vencidos",
+          "edad_h": 895
         },
         {
           "PONumber": "5642558",
@@ -612,7 +602,7 @@
           "tipo": "onsite_legal_assistance",
           "segmento": "Road",
           "grupo": "inmediatos",
-          "edad_h": 855.9
+          "edad_h": 873.9
         }
       ],
       "notas": []
@@ -628,31 +618,21 @@
         "rojo": null
       },
       "semaforo": "sin_umbral",
-      "valor": 113,
+      "valor": -79,
       "formato": "signo",
-      "dia_referencia": "2026-11-21",
+      "dia_referencia": "2026-11-22",
       "ayer": {
-        "creados": 249,
-        "cerrados": 136,
-        "neto": 113
+        "creados": 149,
+        "cerrados": 228,
+        "neto": -79
       },
       "promedio": {
-        "creados": 235.5,
-        "cerrados": 214.3,
-        "neto": 21.2,
+        "creados": 232.9,
+        "cerrados": 217.3,
+        "neto": 15.6,
         "dias": 30
       },
       "serie": [
-        {
-          "dia": "2026-10-23",
-          "creados": 264,
-          "creados_finalizados": 240,
-          "creados_activos": 4,
-          "creados_cancelados": 20,
-          "cerrados": 178,
-          "neto": 86,
-          "parcial": false
-        },
         {
           "dia": "2026-10-24",
           "creados": 272,
@@ -735,12 +715,12 @@
         },
         {
           "dia": "2026-11-01",
-          "creados": 175,
+          "creados": 174,
           "creados_finalizados": 151,
-          "creados_activos": 2,
+          "creados_activos": 1,
           "creados_cancelados": 22,
           "cerrados": 184,
-          "neto": -9,
+          "neto": -10,
           "parcial": false
         },
         {
@@ -826,8 +806,8 @@
         {
           "dia": "2026-11-10",
           "creados": 228,
-          "creados_finalizados": 210,
-          "creados_activos": 9,
+          "creados_finalizados": 211,
+          "creados_activos": 8,
           "creados_cancelados": 9,
           "cerrados": 242,
           "neto": -14,
@@ -845,49 +825,49 @@
         },
         {
           "dia": "2026-11-12",
-          "creados": 203,
+          "creados": 202,
           "creados_finalizados": 181,
-          "creados_activos": 9,
+          "creados_activos": 8,
           "creados_cancelados": 13,
           "cerrados": 195,
-          "neto": 8,
+          "neto": 7,
           "parcial": false
         },
         {
           "dia": "2026-11-13",
-          "creados": 245,
-          "creados_finalizados": 212,
-          "creados_activos": 14,
+          "creados": 243,
+          "creados_finalizados": 214,
+          "creados_activos": 10,
           "creados_cancelados": 19,
           "cerrados": 198,
-          "neto": 47,
+          "neto": 45,
           "parcial": false
         },
         {
           "dia": "2026-11-14",
-          "creados": 216,
-          "creados_finalizados": 198,
-          "creados_activos": 5,
+          "creados": 215,
+          "creados_finalizados": 199,
+          "creados_activos": 3,
           "creados_cancelados": 13,
           "cerrados": 212,
-          "neto": 4,
+          "neto": 3,
           "parcial": false
         },
         {
           "dia": "2026-11-15",
-          "creados": 186,
-          "creados_finalizados": 158,
-          "creados_activos": 13,
+          "creados": 185,
+          "creados_finalizados": 161,
+          "creados_activos": 9,
           "creados_cancelados": 15,
           "cerrados": 161,
-          "neto": 25,
+          "neto": 24,
           "parcial": false
         },
         {
           "dia": "2026-11-16",
           "creados": 218,
-          "creados_finalizados": 194,
-          "creados_activos": 7,
+          "creados_finalizados": 195,
+          "creados_activos": 6,
           "creados_cancelados": 17,
           "cerrados": 153,
           "neto": 65,
@@ -896,61 +876,71 @@
         {
           "dia": "2026-11-17",
           "creados": 272,
-          "creados_finalizados": 225,
-          "creados_activos": 25,
-          "creados_cancelados": 22,
+          "creados_finalizados": 227,
+          "creados_activos": 22,
+          "creados_cancelados": 23,
           "cerrados": 271,
           "neto": 1,
           "parcial": false
         },
         {
           "dia": "2026-11-18",
-          "creados": 234,
-          "creados_finalizados": 199,
-          "creados_activos": 21,
+          "creados": 233,
+          "creados_finalizados": 202,
+          "creados_activos": 17,
           "creados_cancelados": 14,
           "cerrados": 234,
-          "neto": 0,
+          "neto": -1,
           "parcial": false
         },
         {
           "dia": "2026-11-19",
           "creados": 258,
-          "creados_finalizados": 188,
-          "creados_activos": 52,
-          "creados_cancelados": 18,
+          "creados_finalizados": 199,
+          "creados_activos": 39,
+          "creados_cancelados": 20,
           "cerrados": 216,
           "neto": 42,
           "parcial": false
         },
         {
           "dia": "2026-11-20",
-          "creados": 271,
-          "creados_finalizados": 176,
-          "creados_activos": 81,
-          "creados_cancelados": 14,
-          "cerrados": 245,
-          "neto": 26,
+          "creados": 279,
+          "creados_finalizados": 214,
+          "creados_activos": 50,
+          "creados_cancelados": 15,
+          "cerrados": 252,
+          "neto": 27,
           "parcial": false
         },
         {
           "dia": "2026-11-21",
-          "creados": 249,
-          "creados_finalizados": 119,
-          "creados_activos": 115,
-          "creados_cancelados": 15,
-          "cerrados": 136,
-          "neto": 113,
+          "creados": 286,
+          "creados_finalizados": 190,
+          "creados_activos": 74,
+          "creados_cancelados": 22,
+          "cerrados": 171,
+          "neto": 115,
           "parcial": false
         },
         {
           "dia": "2026-11-22",
-          "creados": 15,
-          "creados_finalizados": 8,
-          "creados_activos": 7,
+          "creados": 149,
+          "creados_finalizados": 62,
+          "creados_activos": 78,
+          "creados_cancelados": 9,
+          "cerrados": 228,
+          "neto": -79,
+          "parcial": false
+        },
+        {
+          "dia": "2026-11-23",
+          "creados": 13,
+          "creados_finalizados": 2,
+          "creados_activos": 11,
           "creados_cancelados": 0,
-          "cerrados": 80,
-          "neto": -65,
+          "cerrados": 3,
+          "neto": 10,
           "parcial": true
         }
       ],
@@ -958,8 +948,7 @@
     }
   ],
   "advertencias": [
-    "TipoServicio con dos segmentos distintos: mensajeria_de_pequenos_paquetes",
     "28 servicios quedaron fuera del tablero por no tener segmento asignado",
-    "Tipos sin segmento en la pestaña de segmentos: red_descuentos_servicios_medicos, ambulance, hotel_por_averia_o_accidente, legal, informative_call, examenes_prequirurgicos_para_esterilizacion, telemedicina_especialistas, traslado_seguro, home_nurse, repatriacion_acompanantes, lavado_chasis_camioneta, on_site_legal_assistance, basic_mechanics, motorcycle_alignment_and_balancing_basic_brake_service, orientacion_legal_virtual"
+    "Tipos sin segmento en la pestaña de segmentos: examenes_prequirurgicos_para_esterilizacion, red_descuentos_servicios_medicos, legal, hotel_por_averia_o_accidente, basic_mechanics, telemedicina_especialistas, ambulance, orientacion_legal_virtual, lavado_chasis_camioneta, motorcycle_alignment_and_balancing_basic_brake_service, traslado_seguro, informative_call, on_site_legal_assistance, repatriacion_acompanantes, home_nurse"
   ]
 }
